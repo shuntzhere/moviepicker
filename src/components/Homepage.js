@@ -1,10 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Movie from './Movie';
 
-// const FEATURED_API = "https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=7726b1df1866c6f7df6f387a7d46acb7&page=1";
-
-
-
 
 function HomePage() {
     const [movies, setMovies] = useState([]);
@@ -12,7 +8,7 @@ function HomePage() {
     const [darkMode, setDarkMode] = useState(false);
     const [currentPage, setCurrentPage] = useState(1);
 
-    // const SEARCH_API = `https://api.themoviedb.org/3/search/company?api_key=api_key%3D7726b1df1866c6f7df6f387a7d46acb7&query=${search}&page=1`
+    const SEARCH_API = `https://api.themoviedb.org/3/search/movie?api_key=7726b1df1866c6f7df6f387a7d46acb7&language=en-US&query=${search}&page=1&include_adult=false`
 
 
     useEffect(() => {
@@ -31,12 +27,9 @@ function HomePage() {
     const handleOnSubmit = (e) => {
         e.preventDefault();
 
-        if (search) {
-            getMovies(`https://api.themoviedb.org/3/search/company?api_key=api_key%3D7726b1df1866c6f7df6f387a7d46acb7&query=${search}&page=1`);
-            console.log(SEARCH_API);
+        getMovies(SEARCH_API);
+        setSearch('');
 
-            setSearch('');
-        }
 
     }
 
@@ -85,12 +78,13 @@ function HomePage() {
                 </form>
 
             </header>
+
             <div className={darkMode ? 'dark-mode movie-container' : 'light-mode movie-container'}>
 
-                {movies.length > 0 && movies.map((movie) => (
-                    <Movie key={movie.id} {...movie} />
+                {movies.length > 0 && movies.map((movie) => {
+                    return <Movie key={movie.id} {...movie} />
 
-                ))}
+                })}
             </div>
 
             <footer>

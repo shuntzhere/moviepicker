@@ -17,7 +17,7 @@ function Movie({ title, poster_path, overview, vote_average, id }) {
     return (
         <div className="movie">
             <img src={poster_path ?
-                IMAGE_API + poster_path : null} alt={title} />
+                IMAGE_API + poster_path : "https://images.unsplash.com/photo-1440404653325-ab127d49abc1?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80"} alt={title} />
             <div className="movie-info">
                 <h3>{title}</h3>
                 <span className={`tag ${setVoteClass(vote_average)}`}>{vote_average}</span>
