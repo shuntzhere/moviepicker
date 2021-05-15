@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Movie from './Movie';
 
-const FEATURED_API = "https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=7726b1df1866c6f7df6f387a7d46acb7&page=1";
+// const FEATURED_API = "https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=7726b1df1866c6f7df6f387a7d46acb7&page=1";
 
 
 const SEARCH_API = "https:/api.themoviedb.org/3/search/movie?&api_key=7726b1df1866c6f7df6f387a7d46acb7&query="
