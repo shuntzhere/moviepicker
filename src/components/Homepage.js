@@ -31,7 +31,8 @@ function HomePage() {
         e.preventDefault();
 
         if (search) {
-            getMovies(SEARCH_API + search);
+            getMovies(`https:/api.themoviedb.org/3/search/movie?&api_key=7726b1df1866c6f7df6f387a7d46acb7&query=${search}`);
+            console.log(SEARCH_API + search);
 
             setSearch('');
         }
