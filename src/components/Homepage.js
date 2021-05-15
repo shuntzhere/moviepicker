@@ -12,7 +12,7 @@ function HomePage() {
     const [darkMode, setDarkMode] = useState(false);
     const [currentPage, setCurrentPage] = useState(1);
 
-    const SEARCH_API = `https://api.themoviedb.org/3/search/company?api_key=api_key%3D7726b1df1866c6f7df6f387a7d46acb7&query=${search}&page=1`
+    // const SEARCH_API = `https://api.themoviedb.org/3/search/company?api_key=api_key%3D7726b1df1866c6f7df6f387a7d46acb7&query=${search}&page=1`
 
 
     useEffect(() => {
@@ -32,7 +32,7 @@ function HomePage() {
         e.preventDefault();
 
         if (search) {
-            getMovies(`https:/api.themoviedb.org/3/search/movie?&api_key=7726b1df1866c6f7df6f387a7d46acb7&query=${search}`);
+            getMovies(`https://api.themoviedb.org/3/search/company?api_key=api_key%3D7726b1df1866c6f7df6f387a7d46acb7&query=${search}&page=1`);
             console.log(SEARCH_API);
 
             setSearch('');
